@@ -1,0 +1,173 @@
+/* Hide browser's native password reveal button */
+.input[type="password"]::-ms-reveal,
+.input[type="password"]::-ms-clear,
+.input[type="password"]::-webkit-credentials-auto-fill-button,
+.input[type="password"]::-webkit-textfield-decoration-container,
+.input[type="password"]::-webkit-outer-spin-button,
+.input[type="password"]::-webkit-inner-spin-button {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* For Chrome, Edge, Safari */
+.input[type="password"]::-webkit-credentials-auto-fill-button {
+  display: none !important;
+}
+
+/* For Firefox - remove the password reveal button */
+.input[type="password"] {
+  -moz-appearance: textfield;
+}
+.container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 100%);
+}
+
+/* Animated background orbs - ADD THIS */
+.orb1, .orb2, .orb3 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(92, 201, 166, 0.25);
+  top: -150px;
+  right: -100px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  background: rgba(163, 156, 255, 0.2);
+  bottom: -100px;
+  left: -100px;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.orb3 {
+  width: 300px;
+  height: 300px;
+  background: rgba(92, 201, 166, 0.15);
+  top: 40%;
+  left: 30%;
+  animation: float 18s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 20px); }
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  width: 360px;
+  background: white;
+  padding: 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #0f172a;
+}
+
+.input {
+  width: 94%;
+  padding: 10px;
+  margin-top: 12px;
+  border: 1px solid #9fadbd;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: #a39cff;
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 5px;
+  top: 65%;
+  transform: translateY(-50%);
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #a39cff;
+}
+
+.eyeBtn:hover {
+  color: #a39cff;
+}
+
+.button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  background: #a39cff;
+  color: white;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #8f87ff;
+}
+
+.link {
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+.link a {
+  color: #a39cff;
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+}
+
+.error {
+  margin-top: 10px;
+  color: #ef4444;
+}
+
+.guestButton {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgba(163, 156, 255, 0.3);
+  background: transparent;
+  color: #5cc9a6;
+  font-weight: 550;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.guestButton:hover {
+  background: rgba(92, 201, 166, 0.08);
+  border-color: #5cc9a6;
+}

@@ -1,0 +1,429 @@
+/* CONTAINER WITH GLASS BACKGROUND */
+.container {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #f5f7ff 0%, #eef2ff 100%);
+}
+
+/* Animated background orbs */
+.orb1, .orb2, .orb3 {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb1 {
+  width: 400px;
+  height: 400px;
+  background: rgba(92, 201, 166, 0.25);
+  top: -150px;
+  right: -100px;
+  animation: float 20s ease-in-out infinite;
+}
+
+.orb2 {
+  width: 350px;
+  height: 350px;
+  background: rgba(163, 156, 255, 0.2);
+  bottom: -100px;
+  left: -100px;
+  animation: float 25s ease-in-out infinite reverse;
+}
+
+.orb3 {
+  width: 300px;
+  height: 300px;
+  background: rgba(92, 201, 166, 0.15);
+  top: 40%;
+  left: 30%;
+  animation: float 18s ease-in-out infinite;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(30px, 20px); }
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 30px;
+}
+
+/* HEADER */
+.header {
+  margin-bottom: 40px;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.wave {
+  display: inline-block;
+  animation: wave 1.5s ease-in-out infinite;
+  transform-origin: 70% 70%;
+}
+
+@keyframes wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(15deg); }
+  75% { transform: rotate(-10deg); }
+}
+
+.subtitle {
+  color: #64748b;
+  font-size: 16px;
+}
+
+/* CREATE BUTTON */
+.createButtonContainer {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.createBtn {
+  background: linear-gradient(135deg, #5cc9a6, #3da882);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 50px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(92, 201, 166, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.createBtn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 25px rgba(92, 201, 166, 0.4);
+}
+
+/* TWO COLUMNS */
+.twoColumns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* GLASSMORPHISM COLUMNS */
+.column {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 28px;
+  padding: 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.ownerColumn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(92, 201, 166, 0.1);
+  border-color: rgba(92, 201, 166, 0.3);
+}
+
+.collabColumn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(163, 156, 255, 0.1);
+  border-color: rgba(163, 156, 255, 0.3);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* COLUMN HEADER */
+.columnHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+}
+
+.columnIconWrapper {
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.columnIcon {
+  font-size: 26px;
+}
+
+.columnTitleInfo {
+  flex: 1;
+}
+
+.columnTitleInfo h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0f172a;
+  margin: 0;
+}
+
+.repoCount {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.rolePill {
+  font-size: 12px;
+  padding: 5px 12px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+.ownerColumn .rolePill {
+  background: rgba(92, 201, 166, 0.15);
+  color: #5cc9a6;
+}
+
+.collabColumn .rolePill {
+  background: rgba(163, 156, 255, 0.15);
+  color: #a39cff;
+}
+
+/* REPO LIST */
+.repoList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.repoList::-webkit-scrollbar {
+  width: 4px;
+}
+
+.repoList::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+}
+
+.repoList::-webkit-scrollbar-thumb {
+  background: rgba(92, 201, 166, 0.5);
+  border-radius: 4px;
+}
+
+/* CARDS */
+.card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  animation: slideIn 0.4s ease-out forwards;
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+@keyframes slideIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.card:hover {
+  transform: translateX(6px) scale(1.01);
+  background: white;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.ownerCard:hover {
+  border-left: 3px solid #5cc9a6;
+}
+
+.collabCard:hover {
+  border-left: 3px solid #a39cff;
+}
+
+.cardIcon {
+  font-size: 23px;
+}
+
+.cardContent {
+  flex: 1;
+}
+
+.repoName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.cardMeta {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+.cardArrow {
+  font-size: 18px;
+  color: #cbd5e1;
+  transition: all 0.2s ease;
+}
+
+.card:hover .cardArrow {
+  transform: translateX(4px);
+  color: #5cc9a6;
+}
+
+.collabCard:hover .cardArrow {
+  color: #a39cff;
+}
+
+/* EMPTY STATES */
+.emptyColumn {
+  text-align: center;
+  padding: 50px 20px;
+  color: #94a3b8;
+}
+
+.emptyColumn span {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 12px;
+  opacity: 0.6;
+}
+
+.emptyColumn p {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.smallCreateBtn {
+  background: transparent;
+  border: 1px solid #5cc9a6;
+  color: #5cc9a6;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.smallCreateBtn:hover {
+  background: #5cc9a6;
+  color: white;
+}
+
+.emptyState {
+  text-align: center;
+  padding: 80px 40px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border-radius: 40px;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.emptyIcon {
+  font-size: 64px;
+  margin-bottom: 20px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.emptyState h2 {
+  font-size: 24px;
+  color: #0f172a;
+  margin-bottom: 12px;
+}
+
+.emptyState p {
+  color: #64748b;
+  margin-bottom: 28px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .twoColumns {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  
+  .content {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .columnHeader {
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    padding: 12px;
+  }
+  
+  .cardIcon {
+    font-size: 22px;
+  }
+  
+  .repoName {
+    font-size: 14px;
+  }
+}
+
+

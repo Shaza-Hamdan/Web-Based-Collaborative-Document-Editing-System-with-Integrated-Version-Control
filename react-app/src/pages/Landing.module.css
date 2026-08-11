@@ -1,0 +1,645 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+.container {
+  font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+
+  /* Deep navy to subtle green gradient background */
+  background: linear-gradient(
+    135deg,
+    #0b0d3b 0%,
+    #0f1145 30%,
+    #0d2a2a 70%,
+    #0b0d3b 100%
+  );
+
+  color: #e2e2e8;
+}
+
+/* =========================
+   GLOW EFFECTS (background) - More green
+========================= */
+
+.goldGlow {
+  position: fixed;
+  width: 420px;
+  height: 420px;
+  top: 40%;
+  left: 15%;
+
+  background: radial-gradient(circle, #9ddccb, transparent 70%);
+  opacity: 0.2;
+  filter: blur(90px);
+  z-index: 0;
+
+  animation: float 18s ease-in-out infinite;
+}
+
+.container::before {
+  content: "";
+  position: fixed;
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  right: -150px;
+
+  background: radial-gradient(circle, #9ddccb, transparent 70%);
+  opacity: 0.18;
+  filter: blur(100px);
+  z-index: 0;
+
+  animation: float 20s ease-in-out infinite;
+}
+
+.container::after {
+  content: "";
+  position: fixed;
+  width: 500px;
+  height: 500px;
+  bottom: -120px;
+  left: -120px;
+
+  background: radial-gradient(circle, #a39cff, transparent 70%);
+  opacity: 0.1;
+  filter: blur(90px);
+  z-index: 0;
+
+  animation: float 22s ease-in-out infinite reverse;
+}
+
+/* Extra green glow */
+.container .greenGlow {
+  position: fixed;
+  width: 380px;
+  height: 380px;
+  top: 60%;
+  right: 5%;
+  background: radial-gradient(circle, #9ddccb, transparent 70%);
+  opacity: 0.15;
+  filter: blur(85px);
+  z-index: 0;
+  animation: float 25s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0); }
+  50% { transform: translate(25px, 18px); }
+}
+
+/* =========================
+   HERO (CENTERED) - Hero title unchanged
+========================= */
+
+.heroCentered {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  padding: 140px 20px 90px;
+  max-width: 900px;
+  margin: 0 auto;
+
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.heroCentered h1 {
+  font-family: "Mona Sans", "Inter", sans-serif;
+  font-size: 64px;
+  font-weight: 500;
+  line-height: 1.1;
+  margin-bottom: 6px;
+  padding-bottom: 7px;
+  background: linear-gradient(135deg, #ffffff, #a39cff, #9ddccb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroCentered p {
+  font-family: "Mona Sans", "Inter", sans-serif;
+  margin-top: 22px;
+  font-size: 18px;
+  color: #c0d0d0;
+  max-width: 620px;
+  line-height: 1.6;
+}
+
+/* =========================
+   BUTTONS - More green
+========================= */
+
+.actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.primary {
+  background: linear-gradient(135deg, #9ddccb, #7bc5b0);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 999px;
+  color: #0b0d3b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 10px 25px rgba(157, 220, 203, 0.3);
+}
+
+.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(157, 220, 203, 0.5);
+  background: linear-gradient(135deg, #b5e6d8, #9ddccb);
+  color: #0b0d3b;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #9ddccb;
+  padding: 12px 24px;
+  border-radius: 999px;
+  color: #9ddccb;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.secondary:hover {
+  background: rgba(157, 220, 203, 0.15);
+  transform: translateY(-2px);
+  border-color: #9ddccb;
+  color: #ffffff;
+}
+
+/* =========================
+   ROLES SECTION - More green
+========================= */
+
+.roles {
+  position: relative;
+  z-index: 1;
+
+  padding: 70px 40px;
+  text-align: center;
+}
+
+.roles h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+
+  background: linear-gradient(135deg, #9ddccb, #a39cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.rolesGrid {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.roleCard {
+  width: 240px;
+  padding: 26px;
+  border-radius: 20px;
+
+  background: rgba(11, 13, 59, 0.6);
+  border: 1px solid rgba(157, 220, 203, 0.3);
+  backdrop-filter: blur(4px);
+
+  transition: 0.2s ease;
+}
+
+.roleCard:hover {
+  transform: translateY(-5px);
+  border-color: #9ddccb;
+  box-shadow: 0 10px 30px rgba(157, 220, 203, 0.2);
+}
+
+.roleIcon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.roleCard h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #ffffff;
+}
+
+.roleCard p {
+  font-size: 14px;
+  color: #c0d0d0;
+}
+
+/* =========================
+   FEATURES - More green
+========================= */
+
+.features {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.features h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+
+  background: linear-gradient(135deg, #9ddccb, #a39cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: rgba(11, 13, 59, 0.6);
+  padding: 28px;
+  border-radius: 20px;
+  border: 1px solid rgba(157, 220, 203, 0.25);
+  backdrop-filter: blur(4px);
+
+  transition: 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #9ddccb;
+  box-shadow: 0 10px 30px rgba(157, 220, 203, 0.15);
+}
+
+.card h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #c0d0d0;
+  line-height: 1.5;
+}
+.cardTitle {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  display: block;
+  color: #ffffff;
+}
+.cardTitleBranch{
+    font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 45px;
+  display: block;
+  color: #ffffff;
+}
+/* =========================
+   HOW IT WORKS - More green
+========================= */
+
+.steps {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  padding: 80px 40px;
+}
+
+.steps h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+  background: linear-gradient(135deg, #9ddccb, #a39cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stepGrid {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.stepGrid > div {
+  background: rgba(11, 13, 59, 0.8);
+  padding: 14px 20px;
+  border-radius: 999px;
+
+  font-size: 14px;
+  color: #9ddccb;
+  font-weight: 500;
+
+  border: 1px solid rgba(157, 220, 203, 0.3);
+  transition: 0.2s ease;
+}
+
+.stepGrid > div:hover {
+  border-color: #9ddccb;
+  color: #ffffff;
+  background: rgba(157, 220, 203, 0.1);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   CTA - More green
+========================= */
+
+.cta {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  padding: 100px 40px;
+}
+
+.cta h2 {
+  font-size: 38px;
+  margin-bottom: 25px;
+
+  background: linear-gradient(135deg, #9ddccb, #a39cff, #9ddccb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta .primary {
+  background: linear-gradient(135deg, #9ddccb, #7bc5b0);
+  color: #0b0d3b;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 14px 32px;
+}
+
+.cta .primary:hover {
+  background: linear-gradient(135deg, #b5e6d8, #9ddccb);
+  box-shadow: 0 15px 35px rgba(157, 220, 203, 0.4);
+}
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   WHY SECTION - More green
+========================= */
+
+.why {
+  position: relative;
+  z-index: 1;
+
+  text-align: center;
+  padding: 90px 40px;
+  padding-top:28px;
+}
+
+.why h2 {
+  font-size: 34px;
+  margin-bottom: 40px;
+
+  background: linear-gradient(135deg, #9ddccb, #a39cff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* horizontal menu */
+.whyMenu {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.whyItem {
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  background: rgba(11, 13, 59, 0.6);
+  border: 1px solid rgba(157, 220, 203, 0.3);
+
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  color: #c0d0d0;
+}
+
+.whyItem:hover {
+  color: #9ddccb;
+  border-color: #9ddccb;
+  transform: translateY(-2px);
+}
+
+/* active tab */
+.active {
+  background: rgba(157, 220, 203, 0.15);
+  color: #9ddccb;
+  border-color: #9ddccb;
+}
+
+/* content box */
+.whyContent {
+  max-width: 600px;
+  margin: 0 auto;
+
+  padding: 20px 28px;
+  border-radius: 16px;
+
+  background: rgba(11, 13, 59, 0.6);
+  border: 1px solid rgba(157, 220, 203, 0.25);
+
+  font-size: 16px;
+  line-height: 1.6;
+  color: #c0d0e8;
+  backdrop-filter: blur(4px);
+
+  animation: fadeUp 0.3s ease;
+}
+
+.bannerSection {
+  position: relative;
+  z-index: 1;
+  padding: 80px 40px;
+}
+
+.banner {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  background: rgba(11, 13, 59, 0.7);
+  border: 1px solid rgba(157, 220, 203, 0.25);
+  border-radius: 24px;
+
+  padding: 40px;
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* banner content */
+.bannerContent {
+  text-align: center;
+  font-size: 18px;
+  color: #c0d0e8;
+  line-height: 1.6;
+  min-height: 60px;
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  padding: 16px 32px;
+  background: rgba(11, 13, 59, 0.7);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(157, 220, 203, 0.2);
+}
+
+.navContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+width: 200px; 
+}
+
+.logoImage {
+  height: 36px;
+  width: auto;
+}
+
+.logoText {
+  font-size: 20px;
+  font-weight: 600;
+  background: linear-gradient(135deg, #ffffff, #a39cff, #9ddccb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Navigation Links */
+.navLinks {
+display: flex;
+  gap: 32px;
+  flex: 1; /* Takes remaining space */
+  justify-content: center; 
+}
+.navLink {
+  color: #c0d0d0;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: 0.2s ease;
+  cursor: pointer;
+}
+
+.navLink:hover {
+  color: #9ddccb;
+}
+
+/* Buttons */
+.navButtons {
+ width: 200px; /* Fixed width for buttons area */
+  display: flex;
+  justify-content: flex-end;
+}
+
+.loginBtn {
+  background: transparent;
+  border: 1px solid rgba(157, 220, 203, 0.4);
+  padding: 8px 20px;
+  border-radius: 40px;
+  color: #9ddccb;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.loginBtn:hover {
+  background: rgba(157, 220, 203, 0.1);
+  border-color: #9ddccb;
+}
+
+.signupBtn {
+  background: linear-gradient(135deg, #9ddccb, #7bc5b0);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 40px;
+  color: #0b0d3b;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.signupBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(157, 220, 203, 0.3);
+}
+
+/* Mobile Responsive (optional) */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+  
+  .navLinks {
+    display: none;
+  }
+  
+  .logoText {
+    display: none;
+  }
+}
+.languageSelect {
+  background: rgba(11, 13, 59, 0.6);
+  border: 1px solid rgba(157, 220, 203, 0.3);
+  padding: 8px 12px;
+  border-radius: 40px;
+  color: #9ddccb;
+  cursor: pointer;
+}
